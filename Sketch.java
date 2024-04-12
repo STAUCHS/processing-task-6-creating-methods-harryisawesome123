@@ -1,38 +1,98 @@
+import java.util.Random;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
-  /**
-   * Called once at the beginning of execution, put your size all in this method
-   */
-  public void settings() {
-    size(400, 400);
-  }
-
-  /** 
-   * Called once at the beginning of execution.  Add initial set up
-   * values here i.e background, stroke, fill etc.
-   */
-  public void setup() {
-    background(210, 255, 173);
-  }
-
-  /**
-   * Called repeatedly, anything drawn to the screen goes here
-   */
-  public void draw() {
-    
-  }
-
-  /**
-   * Description
-   * 
-   * @param 
-   * @param 
-   * @return
-   * @author 
-   */
-
   
-  
+public void settings() {
+  // Image Size
+  size(1000, 1000);
 }
+
+ public void setup() {
+  // Background Features
+  background(52, 151, 227);
+  loop();
+  surface.setResizable(true);
+ }
+
+ public void draw() {
+  noStroke();
+
+  Random Colour1 = new Random();
+  Random Colour2 = new Random();
+  Random Colour3 = new Random();
+
+  HouseDrawing(0, 0, height / 10, width / 10);
+  HappyFaceDrawing(0, 0, height / 10, width / 10, Colour1.nextInt(0, 255), Colour2.nextInt(0, 255), Colour3.nextInt(0, 255));
+  }
+
+   /**
+  * A method that draws a house ordered in rows and columns.
+  *
+  * @param HouseX
+  * @param HouseY
+  * @param HouseSizeX
+  * @param HouseSizeY
+  * @author H. Rahukulan
+  */
+
+  public void HouseDrawing(float HouseX, float HouseY, float HouseSizeX, float HouseSizeY) {
+    // Image Drawings for rows and colunms
+    for (HouseX = width / 10; HouseX <= width - (width / 10); HouseX += width / 4.3) {
+      for (HouseY = height / 10; HouseY <= height - (height / 10); HouseY += height / 4) {
+        
+        // House
+        fill(168, 50, 164);
+        rect(HouseX, HouseY, HouseSizeX, HouseSizeY);
+        
+        // Roof
+        fill(13, 1, 23);
+        triangle(HouseX - Math.round(height * 0.025), HouseY, HouseX + Math.round(height * 0.05), HouseY - Math.round(height * 0.075), HouseX + Math.round(height * 0.13), HouseY);
+
+        // Door
+        fill(237, 61, 2);
+        rect(HouseX + Math.round(width * 0.035), HouseY + Math.round(height * 0.04), Math.round(width * 0.03), Math.round(height * 0.06));
+        }
+      }
+ }
+
+  /**
+  * A method that draws a happy face in rows and columns.
+  *
+  * @param FaceX
+  * @param FaceY
+  * @param FaceSizeX
+  * @param FaceSizeY
+  * @param Colour
+  * @author H. Rahukulan
+  */
+
+ public void HappyFaceDrawing(float FaceX, float FaceY, float FaceSizeX, float FaceSizeY, float FaceColour1, float FaceColour2, float FaceColour3) {
+  for (FaceX = width / 4; FaceX <= width - width / 4; FaceX += width / 4) {
+    for (FaceY = height / 4; FaceY <= height - height / 4; FaceY += height / 4) {
+      
+      // Happy Face
+      // Face
+      fill(FaceColour1, FaceColour2, FaceColour3);
+      ellipse(FaceX, FaceY, FaceSizeX, FaceSizeY);
+
+      // Outer Eye
+      fill(255);
+      ellipse(FaceX - Math.round(width * 0.02) , FaceY - Math.round(height * 0.015), 20, 10);
+      ellipse(FaceX +  Math.round(width * 0.02), FaceY -  Math.round(height * 0.015), 20, 10);
+
+      // Pupils
+      fill(FaceColour3, FaceColour2, FaceColour1);
+      ellipse(FaceX - Math.round(width * 0.02), FaceY - Math.round(height * 0.015), Math.round(width * 0.008), Math.round(height * 0.008));
+      ellipse(FaceX + Math.round(width * 0.02), FaceY - Math.round(height * 0.015), Math.round(width * 0.008), Math.round(height * 0.008));
+
+      // Draw the mouth
+      arc(FaceX, FaceY, FaceSizeX - Math.round(width * 0.03) , FaceSizeY - Math.round(height * 0.03), 0, 3);
+    }
+  }
+ }
+}
+
+
+ 
+
