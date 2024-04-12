@@ -5,7 +5,7 @@ public class Sketch extends PApplet {
   
 public void settings() {
   // Image Size
-  size(1000, 1000);
+  size(500, 500);
 }
 
  public void setup() {
@@ -37,7 +37,7 @@ public void settings() {
   */
 
   public void HouseDrawing(float HouseX, float HouseY, float HouseSizeX, float HouseSizeY) {
-    // Image Drawings for rows and colunms
+    // House Drawings for rows and colunms
     for (HouseX = width / 10; HouseX <= width - (width / 10); HouseX += width / 4.3) {
       for (HouseY = height / 10; HouseY <= height - (height / 10); HouseY += height / 4) {
         
@@ -68,6 +68,8 @@ public void settings() {
   */
 
  public void HappyFaceDrawing(float FaceX, float FaceY, float FaceSizeX, float FaceSizeY, float FaceColour1, float FaceColour2, float FaceColour3) {
+
+  // Face Drawings for columns and rows
   for (FaceX = width / 4; FaceX <= width - width / 4; FaceX += width / 4) {
     for (FaceY = height / 4; FaceY <= height - height / 4; FaceY += height / 4) {
       
@@ -78,8 +80,8 @@ public void settings() {
 
       // Outer Eye
       fill(255);
-      ellipse(FaceX - Math.round(width * 0.02) , FaceY - Math.round(height * 0.015), 20, 10);
-      ellipse(FaceX +  Math.round(width * 0.02), FaceY -  Math.round(height * 0.015), 20, 10);
+      ellipse(FaceX - Math.round(width * 0.02), FaceY - Math.round(height * 0.015), Math.round(width * 0.02), Math.round(height * 0.01));
+      ellipse(FaceX +  Math.round(width * 0.02), FaceY -  Math.round(height * 0.015), Math.round(width * 0.02), Math.round(height * 0.01));
 
       // Pupils
       fill(FaceColour3, FaceColour2, FaceColour1);
