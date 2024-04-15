@@ -14,8 +14,8 @@ public class Sketch extends PApplet {
   */
  public void settings() {
   // Image Size
-  size(1000, 1000);
-}
+  size(500, 500);
+ }
 
   /** 
   * Called once at the beginning of execution.  Add initial set up
@@ -27,7 +27,7 @@ public class Sketch extends PApplet {
   noLoop();
  }
 
- /** 
+  /** 
   * Called repeatedly, anything drawn to the screen goes here
   */
  public void draw() {
@@ -43,7 +43,7 @@ public class Sketch extends PApplet {
   HappyFaceDrawing(0, 0, height / 10, width / 10, Colour1.nextInt(0, 255), Colour2.nextInt(0, 255), Colour3.nextInt(0, 255));
   }
 
-   /**
+  /**
   * A method that draws a house ordered in rows and columns.
   *
   * @param HouseX
@@ -73,7 +73,7 @@ public class Sketch extends PApplet {
       }
  }
 
- /**
+  /**
   * A boolean method used to determine if a number is even or odd.
   *
   * @param OddOrEvenNumber
@@ -103,7 +103,7 @@ public class Sketch extends PApplet {
   * @author H. Rahukulan
   */
 
- public void HappyFaceDrawing(float FaceX, float FaceY, float FaceSizeX, float FaceSizeY, float FaceColour1, float FaceColour2, float FaceColour3) {
+  public void HappyFaceDrawing(float FaceX, float FaceY, float FaceSizeX, float FaceSizeY, float FaceColour1, float FaceColour2, float FaceColour3) {
 
   // Face Drawings for columns and rows
   for (FaceX = width / 4; FaceX <= width - width / 4; FaceX += width / 4) {
