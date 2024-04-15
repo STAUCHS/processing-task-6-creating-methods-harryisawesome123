@@ -13,6 +13,7 @@ public void settings() {
   background(52, 151, 227);
   loop();
   surface.setResizable(true);
+  
  }
 
  public void draw() {
@@ -25,6 +26,25 @@ public void settings() {
   HouseDrawing(0, 0, height / 10, width / 10);
   HappyFaceDrawing(0, 0, height / 10, width / 10, Colour1.nextInt(0, 255), Colour2.nextInt(0, 255), Colour3.nextInt(0, 255));
   }
+
+  /**
+  * Happy or Sad
+  *
+  * @param FaceMiddle
+  * @return Returns true if even, false if odd.
+  * @author H. Rahukulan
+  */
+
+  public boolean ColourChecker(float FaceMiddle) {
+    Random HappyorSad = new Random();
+    FaceMiddle = HappyorSad.nextInt(1, 2);
+    if (FaceMiddle % 2 == 0) {
+      return true; 
+    }
+    else {
+      return false;
+    }
+    }
 
    /**
   * A method that draws a house ordered in rows and columns.
@@ -63,7 +83,9 @@ public void settings() {
   * @param FaceY
   * @param FaceSizeX
   * @param FaceSizeY
-  * @param Colour
+  * @param FaceColour1
+  * @param FaceColour2
+  * @param FaceColour3
   * @author H. Rahukulan
   */
 
@@ -94,7 +116,4 @@ public void settings() {
   }
  }
 }
-
-
  
-
