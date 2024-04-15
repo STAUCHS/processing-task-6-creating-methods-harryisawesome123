@@ -1,48 +1,47 @@
 import java.util.Random;
 import processing.core.PApplet;
 
+/**
+* A program Sketch.java that uses methods with parameters to draw composite objects at various locations
+* @author: H. Rahukulan
+*
+*/
+
 public class Sketch extends PApplet {
   
-public void settings() {
+  /**
+  * Called once at the beginning of execution, put your size all in this method
+  */
+ public void settings() {
   // Image Size
-  size(500, 500);
+  size(1000, 1000);
 }
 
+  /** 
+  * Called once at the beginning of execution.  Add initial set up
+  * values here i.e background, stroke, fill etc.
+  */
  public void setup() {
   // Background Features
   background(52, 151, 227);
   noLoop();
-  surface.setResizable(true);
-  
  }
 
+ /** 
+  * Called repeatedly, anything drawn to the screen goes here
+  */
  public void draw() {
   noStroke();
 
+  // Random Colours
   Random Colour1 = new Random();
   Random Colour2 = new Random();
   Random Colour3 = new Random();
 
+  // Inserting values in parameters
   HouseDrawing(0, 0, height / 10, width / 10);
   HappyFaceDrawing(0, 0, height / 10, width / 10, Colour1.nextInt(0, 255), Colour2.nextInt(0, 255), Colour3.nextInt(0, 255));
   }
-
-  /**
-  * Happy or Sad
-  *
-  * @param OuterEyeColourMaker
-  * @return Returns true if even, false if odd.
-  * @author H. Rahukulan
-  */
-
-  public boolean ColourChecker(float OuterEyeColourMaker) {
-    if (OuterEyeColourMaker % 2 == 0) {
-      return true; 
-    }
-    else {
-      return false;
-    }
-    }
 
    /**
   * A method that draws a house ordered in rows and columns.
@@ -74,6 +73,23 @@ public void settings() {
       }
  }
 
+ /**
+  * A boolean method used to determine if a number is even or odd.
+  *
+  * @param OddOrEvenNumber
+  * @return Returns true if even, false if odd.
+  * @author H. Rahukulan
+  */
+
+  public boolean ColourChecker(float OddOrEvenNumber) {
+    if (OddOrEvenNumber % 2 == 0) {
+      return true; 
+    }
+    else {
+      return false;
+    }
+    }
+
   /**
   * A method that draws a happy face in rows and columns.
   *
@@ -99,9 +115,9 @@ public void settings() {
       ellipse(FaceX, FaceY, FaceSizeX, FaceSizeY);
 
       // Outer Eye
-      noLoop();
-      Random OddOrEven = new Random();
-      int OuterEyeColourMaker = OddOrEven.nextInt(0, 2);
+      Random RandomOddOrEven = new Random();
+      int OuterEyeColourMaker = RandomOddOrEven.nextInt(0, 2);
+      
       boolean blnOutEyeColour = ColourChecker(OuterEyeColourMaker);
       if (blnOutEyeColour) {
         fill(0);
@@ -124,4 +140,3 @@ public void settings() {
   }
  }
 }
- 
