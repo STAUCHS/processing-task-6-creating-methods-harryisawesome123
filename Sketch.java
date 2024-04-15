@@ -49,9 +49,9 @@ public class Sketch extends PApplet {
   /**
   * A method that draws a house ordered in rows and columns given x and y coordinates and colour.
   *
-  * @param HouseX
-  * @param HouseY
-  * @param intHouseColour
+  * @param HouseX X - coordinate
+  * @param HouseY Y - coordinate
+  * @param intHouseColour Colour
   * @author H. Rahukulan
   */
   public void HouseDrawing(float HouseX, float HouseY, int intHouseColour) {
@@ -83,7 +83,7 @@ public class Sketch extends PApplet {
   /**
   * A boolean method used to determine if a number is even or odd.
   *
-  * @param OddOrEvenNumber
+  * @param OddOrEvenNumber The number that is checked for odd or even.
   * @return Returns true if even, false if odd.
   * @author H. Rahukulan
   */
@@ -99,9 +99,9 @@ public class Sketch extends PApplet {
   /**
   * A method that draws a happy face in rows and columns given x and y coordinates and colour.
   *
-  * @param FaceX
-  * @param FaceY
-  * @param intHappyFaceColour
+  * @param FaceX X - coordinate 
+  * @param FaceY Y - coordinate 
+  * @param intHappyFaceColour Colour
   * @author H. Rahukulan
   */
   public void HappyFaceDrawing(float FaceX, float FaceY, int intHappyFaceColour) {
