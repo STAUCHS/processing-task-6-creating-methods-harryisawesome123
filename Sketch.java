@@ -78,9 +78,8 @@ public class Sketch extends PApplet {
     // Door
     fill(237, 61, 2);
     rect(HouseX * 2 + Math.round(width * 0.035), HouseY + Math.round(height * 0.04), Math.round(width * 0.03), Math.round(height * 0.06));
-      }
+  }
  
-
   /**
   * A boolean method used to determine if a number is even or odd.
   *
@@ -142,5 +141,4 @@ public class Sketch extends PApplet {
     // Draw the mouth
     arc(FaceX, FaceY, width / 10 - Math.round(width * 0.03) , height / 10 - Math.round(height * 0.03), 0, 3);
     }
-  
  }
