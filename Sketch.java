@@ -11,7 +11,7 @@ public void settings() {
  public void setup() {
   // Background Features
   background(52, 151, 227);
-  loop();
+  noLoop();
   surface.setResizable(true);
   
  }
@@ -30,15 +30,13 @@ public void settings() {
   /**
   * Happy or Sad
   *
-  * @param FaceMiddle
+  * @param OuterEyeColourMaker
   * @return Returns true if even, false if odd.
   * @author H. Rahukulan
   */
 
-  public boolean ColourChecker(float FaceMiddle) {
-    Random HappyorSad = new Random();
-    FaceMiddle = HappyorSad.nextInt(1, 2);
-    if (FaceMiddle % 2 == 0) {
+  public boolean ColourChecker(float OuterEyeColourMaker) {
+    if (OuterEyeColourMaker % 2 == 0) {
       return true; 
     }
     else {
@@ -101,7 +99,17 @@ public void settings() {
       ellipse(FaceX, FaceY, FaceSizeX, FaceSizeY);
 
       // Outer Eye
-      fill(255);
+      noLoop();
+      Random OddOrEven = new Random();
+      int OuterEyeColourMaker = OddOrEven.nextInt(0, 2);
+      boolean blnOutEyeColour = ColourChecker(OuterEyeColourMaker);
+      if (blnOutEyeColour) {
+        fill(0);
+      }
+      else {
+        fill(255);
+      }
+
       ellipse(FaceX - Math.round(width * 0.02), FaceY - Math.round(height * 0.015), Math.round(width * 0.02), Math.round(height * 0.01));
       ellipse(FaceX +  Math.round(width * 0.02), FaceY -  Math.round(height * 0.015), Math.round(width * 0.02), Math.round(height * 0.01));
 
